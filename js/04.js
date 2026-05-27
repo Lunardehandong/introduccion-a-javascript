@@ -1,10 +1,18 @@
-const producto ="monitor de 20 pulgadas";
+// String o Cadenas de texto
 
-const producto2 =String("monitor de 20 pulgadas");
-const producto3 = new String("monitor de 20 pulgadas");
+const tweet = 'Aprendiendo JavaScript con el curso de Desarrollo Web Completo';
+const producto2 = 'Monitor HD"';
+const email = 'correo@correo.com';
 
-
-
-console.log(producto);
+// length es para la extension
+console.log(tweet.length);
 console.log(producto2);
-console.log(producto3);
+
+// IndexOf (retorna posición)
+console.log(tweet.indexOf('JavaScript'));
+console.log(producto2.indexOf('Tablet'));
+console.log(email.indexOf('@'));
+
+// Includes (retorna true o false)
+console.log(tweet.includes('JavaScript'));
+console.log(producto2.includes('Tablet'));
