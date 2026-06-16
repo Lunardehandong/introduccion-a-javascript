@@ -34,10 +34,6 @@ let resultado = meses.includes('Diciembre');
 resultado = carrito.some( producto => producto.nombre === 'Celular PRO');
 
 // Reduce
-resultado = carrito.reduce(function(total, producto) {
-    return total + producto.precio
-}, 0);
-
 resultado = carrito.reduce(total, producto) total => total + producto.precio(0);
 
 console.log(resultado);
