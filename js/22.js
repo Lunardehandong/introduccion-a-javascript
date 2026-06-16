@@ -33,16 +33,14 @@ let resultado = meses.includes('Diciembre');
 // .some ideal para arreglo de objetos
 resultado = carrito.some( producto => producto.nombre === 'Celular PRO');
 
-resultado = carrito.some(function(producto) {
-    return producto.nombre === 'Celular PRO'
-})
-
-console.log(resultado);
-
 // Reduce
 resultado = carrito.reduce(function(total, producto) {
     return total + producto.precio
 }, 0);
+
+resultado = carrito.reduce(total, producto) total => total + producto.precio(0);
+
+console.log(resultado);
 
 // Filter
 resultado = carrito.filter(function(producto) {
