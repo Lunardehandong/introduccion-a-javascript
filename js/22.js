@@ -30,11 +30,14 @@ meses.forEach(function(mes) {
 
 // Includes
 let resultado = meses.includes('Diciembre');
+// .some ideal para arreglo de objetos
+resultado = carrito.some( producto => producto.nombre === 'Celular PRO');
 
-// Some ideal para arreglo de objetos
 resultado = carrito.some(function(producto) {
     return producto.nombre === 'Celular PRO'
-});
+})
+
+console.log(resultado);
 
 // Reduce
 resultado = carrito.reduce(function(total, producto) {
