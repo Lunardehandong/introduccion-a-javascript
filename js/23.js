@@ -1,1 +1,19 @@
+// const carrito = 800;
 
+// if( efectivo > carrito ) {
+//     console.log('El Usuario puede pagar');
+// } else {
+//     console.log('Fondos Insuficientes');
+// }
+
+const rol = 'VISITANTE';
+
+if(rol === 'ADMINISTRADOR') {
+    console.log('Acceso a todo el sistema');
+} else if(rol === 'EDITOR') {
+    console.log('Eres editor, puedes entrar pero no puedes hacer mucho');
+} else if(rol === 'AUTOR') {
+    console.log('Eres autor, puedes crear publicaciones');
+} else {
+    console.log('No tienes acceso');
+}
