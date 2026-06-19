@@ -22,3 +22,7 @@ const carrito = [
     { nombre: 'Bocinas', precio: 300 },
     { nombre: 'Laptop', precio: 800 }
 ];
+
+for(let i = 0; i < carrito.length; i++ ) {
+    console.log( carrito[i].nombre );
+}
