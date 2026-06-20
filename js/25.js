@@ -26,3 +26,19 @@ const carrito = [
 for(let i = 0; i < carrito.length; i++ ) {
     console.log( carrito[i].nombre );
 }
+
+// While Loop
+
+let i = 0; // Indice
+
+while(i <= 100) { // Condición
+
+    if(i % 2 === 0) {
+        console.log(`El número ${i} es PAR`)
+    } else {
+        console.log(`El número ${i} es IMPAR`)
+    }
+
+    i++; // Incremento
+}
+
