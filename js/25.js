@@ -42,3 +42,11 @@ while(i <= 100) { // Condición
     i++; // Incremento
 }
 
+let i = 0; // Indice
+
+while(i < carrito.length) { // Condición
+
+    console.log(carrito[i].nombre);
+
+    i++; // Incremento
+}
