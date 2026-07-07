@@ -1,1 +1,30 @@
+// Async / await
 
+// Función que simula una consulta asíncrona a una base de datos o API externa
+function descargarNuevosClientes() {
+    return new Promise( resolve => {
+        console.log('Descargando clientes... espere...');
+
+        // Simula una demora de 5 segundos (5000 milisegundos)
+        setTimeout( () => {
+            resolve('Los Clientes fueron Descargados');
+        }, 5000 );
+    });
+}
+
+// Función encargada de consumir la promesa de manera lineal
+async function app() {
+    try {
+        // 'await' detiene la ejecución de ESTA función hasta que la promesa se resuelva
+        const resultado = await descargarNuevosClientes();
+        
+        // Estas líneas se ejecutan únicamente cuando la línea de arriba termina exitosamente
+        console.log(resultado); 
+    } catch (error) {
+        // Si la promesa es rechazada, el error se captura limpiamente aquí
+        console.log(error);
+    }
+}
+
+// Ejecución de la función principal
+app();
