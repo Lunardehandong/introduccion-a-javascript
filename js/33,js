@@ -23,19 +23,21 @@ function descargarUltimosPedidos() {
     });
 }
 
-// Función encargada de consumir la promesa de manera lineal
+// 3. Resto de las líneas: Función principal y ejecución optimizada
 async function app() {
     try {
-        // 'await' detiene la ejecución de ESTA función hasta que la promesa se resuelva
-        const resultado = await descargarNuevosClientes();
+        // En lugar de esperar 5s por los clientes y LUEGO 3s por los pedidos (8s en total)...
+        // Promise.all arranca AMBAS descargas al mismo tiempo en paralelo.
+        const resultado = await Promise.all([ descargarNuevosClientes(), descargarUltimosPedidos() ]);
         
-        // Estas líneas se ejecutan únicamente cuando la línea de arriba termina exitosamente
-        console.log(resultado); 
+        // El resultado es un arreglo con las respuestas en el mismo orden en que se llamaron
+        console.log(resultado[0]); // Muestra: 'Los Clientes fueron Descargados'
+        console.log(resultado[1]); // Muestra: 'Los Pedidos fueron Descargados'
+        
     } catch (error) {
-        // Si la promesa es rechazada, el error se captura limpiamente aquí
+        // Si CUALQUIERA de las promesas del arreglo falla, el control cae directo aquí
         console.log(error);
     }
 }
 
-// Ejecución de la función principal
 app();
