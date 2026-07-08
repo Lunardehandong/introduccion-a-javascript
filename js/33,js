@@ -12,6 +12,17 @@ function descargarNuevosClientes() {
     });
 }
 
+// 2. Segundo Método: Simula descargar los últimos pedidos (Tarda 3 segundos)
+function descargarUltimosPedidos() {
+    return new Promise( resolve => {
+        console.log('Descargando pedidos... espere...');
+
+        setTimeout( () => {
+            resolve('Los Pedidos fueron Descargados');
+        }, 3000 );
+    });
+}
+
 // Función encargada de consumir la promesa de manera lineal
 async function app() {
     try {
